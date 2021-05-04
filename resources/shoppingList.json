@@ -1,7 +1,12 @@
 [
     {
-        "item":"Tapete",
+        "item":"Biscoito",
         "quantity": 1,
-        "price": 1.0
+        "price": 2.80
+    },
+    {
+        "item":"Carne",
+        "quantity": 1.5,
+        "price": 60.0
     }
 ]

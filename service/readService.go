@@ -15,7 +15,7 @@ type ReadService interface {
 	ValidatesEmailsList(emails entity.Emails) error
 }
 
-type readService struct{
+type readService struct {
 	convertService ConvertService
 }
 
@@ -58,7 +58,7 @@ func (s *readService) ReadEmailsListFile(document string) (entity.Emails, error)
 	if err != nil {
 		return entity.Emails{}, err
 	}
-	
+
 	err = s.ValidatesEmailsList(objEmails)
 	if err != nil {
 		return entity.Emails{}, err

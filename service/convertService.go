@@ -2,14 +2,14 @@ package service
 
 const CENTS = 100
 
-type ConvertService interface{
+type ConvertService interface {
 	ConvertToInt(value float32) int
 	ConvertToHashMapFloat(total map[string]int) map[string]float32
 }
 
 type convertService struct{}
 
-func NewConvertService() ConvertService{
+func NewConvertService() ConvertService {
 	return &convertService{}
 }
 

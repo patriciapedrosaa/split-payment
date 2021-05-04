@@ -5,13 +5,13 @@ import (
 	"split-payment/service"
 )
 
-const(
+const (
 	PATH_SHOPPING_LIST_FILE = "resources/shoppingList.json"
-	PATH_EMAILS_LIST_FILE = "resources/emails.json"
+	PATH_EMAILS_LIST_FILE   = "resources/emails.json"
 )
 
 var (
-	readService = service.NewReadService(service.NewConvertService())
+	readService       = service.NewReadService(service.NewConvertService())
 	calculatorService = service.NewCalculatorService(service.NewConvertService())
 )
 
@@ -33,4 +33,3 @@ func main() {
 	}
 	fmt.Println(splitPayment)
 }
-

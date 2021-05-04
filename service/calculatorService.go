@@ -15,8 +15,8 @@ type calculatorService struct {
 	convertService ConvertService
 }
 
-func NewCalculatorService(convertService ConvertService) CalculatorService{
-	return &calculatorService{convertService: convertService}			
+func NewCalculatorService(convertService ConvertService) CalculatorService {
+	return &calculatorService{convertService: convertService}
 }
 
 func (s *calculatorService) CalcPaymentByEmail(list []entity.Product, emails entity.Emails) (map[string]float32, error) {
@@ -27,14 +27,14 @@ func (s *calculatorService) CalcPaymentByEmail(list []entity.Product, emails ent
 	totalFloat := s.convertService.ConvertToHashMapFloat(paymentByEmail)
 	return totalFloat, nil
 }
-func (s *calculatorService) DivisionByEmail(totalPayment int, totalEmails int, emails entity.Emails) (map[string]int) {
+func (s *calculatorService) DivisionByEmail(totalPayment int, totalEmails int, emails entity.Emails) map[string]int {
 	totalPaymentByEmail := totalPayment / totalEmails
 	rest := totalPayment % totalEmails
 
 	totalByEmail := make(map[string]int)
 	for _, email := range emails.Emails {
 		totalByEmail[email] = totalPaymentByEmail
-		if rest > 0{
+		if rest > 0 {
 			totalByEmail[email] = totalPaymentByEmail + 1
 			rest -= 1
 		}
@@ -47,7 +47,7 @@ func (s *calculatorService) TotalPayment(list []entity.Product) int {
 		quantity := item.Quantity
 		price := item.Price
 		value := s.convertService.ConvertToInt(quantity * price)
-		
+
 		total += value
 	}
 	return total
