@@ -38,12 +38,11 @@ func Test_convertToHashMap(t *testing.T) {
 	}{
 		{
 			name:       "successfully convert to hash map",
-			value:     map[string]int{"pessoa1@email.com": 4500, "pessoa2@email.com": 4500, "pessoa3@email.com": 4500},
+			value:      map[string]int{"pessoa1@email.com": 4500, "pessoa2@email.com": 4500, "pessoa3@email.com": 4500},
 			wantResult: map[string]float32{"pessoa1@email.com": 45.0, "pessoa2@email.com": 45.0, "pessoa3@email.com": 45.0},
 		},
 	}
 	for _, tt := range tests {
-		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			assert := assert.New(t)
 			hashMapFloat := convertService.ConvertToHashMapFloat(tt.value)

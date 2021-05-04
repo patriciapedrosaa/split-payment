@@ -61,7 +61,6 @@ func Test_readShoppingListFile(t *testing.T) {
 		},
 	}
 	for _, tt := range tests {
-		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			assert := assert.New(t)
 			totalByEmail, err := readService.ReadShoppingListFile(tt.shoppingList)
@@ -103,7 +102,6 @@ func Test_readEmailsListFile(t *testing.T) {
 		},
 	}
 	for _, tt := range tests {
-		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			assert := assert.New(t)
 			totalByEmail, err := readService.ReadEmailsListFile(tt.emails)
