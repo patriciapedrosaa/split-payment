@@ -1,0 +1,12 @@
+[
+    {
+        "item":"biscoito",
+        "quantity": 1,
+        "price": 2.0
+    },
+    {
+        "item":"banana",
+        "quantity": 0,
+        "price": 2.0
+    }
+]
